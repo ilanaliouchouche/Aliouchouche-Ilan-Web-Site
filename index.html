@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Website under construction</title>
+    <title>Ilan Aliouchouche's Website</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -16,78 +16,57 @@
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f3f3f3;
+            background: url('https://unsplash.com/fr/photos/nN1HSDtKdlw') no-repeat center center fixed;
+            background-size: cover;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        /* Header styles */
-        header {
-            background-color: #333;
-            height: 80vh;
+        .header-container {
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
             text-align: center;
             color: #fff;
         }
 
         header h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-family: 'Pacifico', cursive;
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
         }
 
-        /* Navigation styles */
-        nav ul {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 0;
-            background-color: #fff;
-        }
-
-        nav ul li {
-            list-style: none;
-        }
-
-        nav ul li a {
-            color: #333;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-
-        /* Footer styles */
-        footer {
-            background-color: #333;
+        nav {
+            background-color: rgba(0, 0, 0, .8);
             color: #fff;
             text-align: center;
             padding: 20px 0;
-            margin-top: 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: inline-flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            color: #fff;
+            font-size: 1.5rem;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    <header class="container">
-        <h1>Ilan ALIOUCHOUCHE's Website</h1>
-        <p>Website under construction by myself using my web programming module</p>
-    </header>
-    <nav class="container">
+    <div class="header-container">
+        <header>
+            <h1>ALIOUCHOUCHE Ilan Web'Site</h1>
+        </header>
+    </div>
+    <nav>
         <ul>
-            <li><a href="#">Home</a></li>
             <li><a href="cv.html">Curriculum Vitae</a></li>
             <li><a href="https://github.com/ilanaliouchouche">Projects</a></li>
-            <li><a href="#">Books</a></li>
-            <li><a href="#">Games</a></li>
-            <li><a href="res/Book_Bird.pdf" target="_blank">Photos</a></li>
-            <li><a href="https://github.com/ilanaliouchouche">GitHub</a></li>
-            <li><a href="https://www.kaggle.com/ilanaliouchouche">Kaggle</a></li>
         </ul>
     </nav>
-    <footer class="container">
-        <p>&copy; 2023 Ilan Aliouchouche. All rights reserved.</p>
-    </footer>
 </body>
 </html>
