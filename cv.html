@@ -2,76 +2,145 @@
 <html>
 <head>
     <title>Curriculum Vitae</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-        h2 {
-            font-size: 22px;
-            margin-top: 30px;
-            margin-bottom: 10px;
-        }
-        ul {
-            list-style-type: none;
-            margin: 0;
+        * {
+            box-sizing: border-box;
             padding: 0;
-            margin-bottom: 20px;
+            margin: 0;
         }
-        li {
-            margin-bottom: 10px;
+
+        body {
+            font-family: 'Pacifico', cursive;
+            line-height: 1.6;
+            color: #333;
+            background: url('img/yuriy-kovalev-nN1HSDtKdlw-unsplash.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(12, 1fr);
+            height: 100vh;
+            color: #fff;
+        }
+
+        h1, h2, p, ul {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+        }
+
+        h1 {
+            grid-column: 1 / 13;
+            grid-row: 1 / 2;
+            text-align: center;
+            font-size: 4rem;
+        }
+
+        .personal-info {
+            grid-column: 1 / 6;
+            grid-row: 2 / 5;
+        }
+
+        .education {
+            grid-column: 7 / 13;
+            grid-row: 2 / 5;
+        }
+
+        .work-experience {
+            grid-column: 1 / 6;
+            grid-row: 5 / 8;
+        }
+
+        .technical-skills {
+            grid-column: 7 / 13;
+            grid-row: 5 / 8;
+        }
+
+        .interests {
+            grid-column: 1 / 6;
+            grid-row: 8 / 11;
+        }
+
+        .personal-qualities {
+            grid-column: 7 / 13;
+            grid-row: 8 / 11;
+        }
+
+        .languages {
+            grid-column: 1 / 6;
+            grid-row: 11 / 12;
+        }
+
+        .references {
+            grid-column: 7 / 13;
+            grid-row: 11 / 12;
         }
     </style>
 </head>
 <body>
     <h1>Curriculum Vitae</h1>
-    <h2>Informations personnelles:</h2>
-    <ul>
-        <li>Nom: Aliouchouche</li>
-        <li>Prénom: Ilan</li>
-        <li>Code postal: 91600</li>
-        <li>E-mail: ilan.aliouchouche@u-psud.fr</li>
-    </ul>
 
-    <h2>Formation:</h2>
-    <p>Actuellement en troisième année de Licence d'informatique à l'Université Paris Saclay</p>
+    <div class="personal-info">
+        <h2>Informations personnelles:</h2>
+        <ul>
+            <li>Nom: Aliouchouche</li>
+            <li>Prénom: Ilan</li>
+            <li>Code postal: 91600</li>
+            <li>E-mail: ilan.aliouchouche@u-psud.fr</li>
+        </ul>
+    </div>
 
-    <h2>Expérience professionnelle:</h2>
-    <p>Agent de production chez XFAB, où j'ai nécessairement fait du contrôle de dimensions et pu former un nouvel agent.</p>
-    <p>Livraison Uber Eat, Deliveroo</p>
+    <div class="education">
+        <h2>Formation:</h2>
+        <p>Actuellement en troisième année de Licence d'informatique à l'Université Paris Saclay</p>
+    </div>
 
-    <h2>Compétences techniques:</h2>
-    <ul>
-        <li>(Java, JavaFX), (Python, Numpy, Scikit-learn, pandas), OCaml, (PHP, HTML, CSS, JS), C, C++</li>
-        <li>Pack Office</li>
-        <li>Certification PIX</li>
-    </ul>
+    <div class="work-experience">
+        <h2>Expérience professionnelle:</h2>
+        <p>Agent de production chez XFAB, où j'ai nécessairement fait du contrôle de dimensions et pu former un nouvel agent.</p>
+        <p>Livraison Uber Eat, Deliveroo</p>
+    </div>
 
-    <h2>Centres d'intérêts:</h2>
-    <ul>
-        <li>Photographie de paysages</li>
-        <li>Photos in-game(jeux vidéo)</li>
-        <li>Moto</li>
-        <li>Astronomie</li>
-    </ul>
+    <div class="technical-skills">
+        <h2>Compétences techniques:</h2>
+        <ul>
+            <li>(Java, JavaFX), (Python, Numpy, Scikit-learn, pandas), OCaml, (PHP, HTML, CSS, JS), C, C++</li>
+            <li>Pack Office</li>
+            <li>Certification PIX</li>
+        </ul>
+    </div>
 
-    <h2>Qualités personnelles:</h2>
-    <ul>
-        <li>Curieux</li>
-        <li>Humble</li>
-        <li>Agréable</li>
-    </ul>
+    <div class="interests">
+        <h2>Centres d'intérêts:</h2>
+        <ul>
+            <li>Photographie de paysages</li>
+            <li>Photos in-game(jeux vidéo)</li>
+            <li>Moto</li>
+            <li>Astronomie</li>
+        </ul>
+    </div>
 
-    <h2>Langues:</h2>
-    <ul>
-        <li>Français: langue maternelle</li>
-        <li>Anglais: plus ou moins B2</li>
-    </ul>
+    <div class="personal-qualities">
+        <h2>Qualités personnelles:</h2>
+        <ul>
+            <li>Curieux</li>
+            <li>Humble</li>
+            <li>Agréable</li>
+        </ul>
+    </div>
 
-    <h2>Références:</h2>
-    <p>Disponibles sur demande</p>
+    <div class="languages">
+        <h2>Langues:</h2>
+        <ul>
+            <li>Français: langue maternelle</li>
+            <li>Anglais: plus ou moins B2</li>
+        </ul>
+    </div>
+
+    <div class="references">
+        <h2>Références:</h2>
+        <p>Disponibles sur demande</p>
+    </div>
+
 </body>
 </html>
