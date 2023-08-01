@@ -59,6 +59,7 @@
             text-decoration: none;
             display: block;
             transition: 0.3s;
+            margin-bottom: 30px;
         }
 
         .menu-btn {
@@ -73,12 +74,9 @@
         }
     </style>
     <script>
-        function openNav() {
-            document.getElementById("myNav").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("myNav").style.width = "0";
+        function toggleNav() {
+            let navWidth = document.getElementById("myNav").style.width;
+            document.getElementById("myNav").style.width = navWidth === "250px" ? "0" : "250px";
         }
     </script>
 </head>
@@ -87,10 +85,9 @@
         <header>
             <h1>ALIOUCHOUCHE Ilan Web'Site</h1>
         </header>
-        <div class="menu-btn" onclick="openNav()">☰</div>
+        <div class="menu-btn" onclick="toggleNav()">☰</div>
     </div>
     <nav id="myNav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <ul>
             <li><a href="cv.html">Curriculum Vitae</a></li>
             <li><a href="https://github.com/ilanaliouchouche">Projects</a></li>
