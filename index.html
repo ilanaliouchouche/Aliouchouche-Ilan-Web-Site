@@ -1,124 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Ilan Aliouchouche's Website</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Ilan Aliouchouche's Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
-
         body {
             font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #EDE7F6; /* Fond violet clair */
             color: #333;
-            background: url('img/yuriy-kovalev-nN1HSDtKdlw-unsplash.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
-
-        .header-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             height: 100vh;
+        }
+
+        .header {
             text-align: center;
-            color: #fff;
+            margin-bottom: 40px;
         }
 
-        header h1 {
-            font-family: 'Pacifico', cursive;
-            font-size: 4rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
+        .header h1 {
+            font-weight: 700;
+            color: #5D1049; /* Violet foncé */
+            font-size: 2.4rem;
         }
 
-        header p {
-            font-family: 'Pacifico', cursive;
-            font-size: 1.5rem;
-            margin-top: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
         }
 
-        nav {
-            position: fixed;
-            height: 100%;
-            width: 0;
-            top: 0;
-            left: 0;
-            background-color: #87CEEB;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-
-        nav ul {
-            list-style: none;
-            padding-left: 30px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            font-family: 'Pacifico', cursive;
-            font-size: 2rem;
+        .navigation a {
+            margin: 0 10px;
             text-decoration: none;
-            display: block;
-            transition: 0.3s;
-            margin-bottom: 30px;
+            color: #5D1049; /* Violet foncé */
+            font-weight: 400;
+            font-size: 1.2rem;
         }
 
-        .menu-btn {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 2rem;
-            font-family: 'Pacifico', cursive;
-            color: #fff;
-            cursor: pointer;
-            z-index: 100;
+        .navigation img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
         }
 
-        footer {
+        .footer {
+            text-align: center;
+            color: #5D1049;
             position: absolute;
-            left: 20px;
             bottom: 20px;
-            font-family: 'Pacifico', cursive;
-            font-size: 1.5rem;
-            color: #fff;
         }
     </style>
-    <script>
-        function toggleNav() {
-            let navWidth = document.getElementById("myNav").style.width;
-            document.getElementById("myNav").style.width = navWidth === "250px" ? "0" : "250px";
-        }
-    </script>
 </head>
 <body>
-    <div class="header-container">
-        <header>
-            <h1>ALIOUCHOUCHE Ilan Web'Site</h1>
-            <p>Hello, I am Ilan Aliouchouche, a Data Science student at Paris-Saclay University in Orsay. I am passionate about Machine Learning, especially NLP. I have various interests such as motorcycling, video games and photography. The site is under construction but you can already find some resources. See you soon.</p>
-        </header>
-        <div class="menu-btn" onclick="toggleNav()">☰</div>
+    <div class="header">
+        <h1>ALIOUCHOUCHE Ilan Web'Site</h1>
     </div>
-    <nav id="myNav">
-        <ul>
-            <li><a href="cv.html">Curriculum Vitae</a></li>
-            <li><a href="https://github.com/ilanaliouchouche?tab=repositories">Projects</a></li>
-            <li><a href="https://www.linkedin.com/in/ilan-aliouchouche-752722277/">LinkedIn</a></li>
-        </ul>
-    </nav>
-    <footer>
-        <p>Contact:</p>
-        <p>ilanaitk@hotmail.com</p>
-        <p>ilan.aliouchouche@universite-paris-saclay.fr</p>
-    </footer>
+    <div class="navigation">
+        <a href="cv.html"><img src="img/iconcv.png" alt="CV"> CV</a>
+        <a href="https://github.com/ilanaliouchouche?tab=repositories"><img src="img/giticon.png" alt="Projects"> Projects</a>
+        <a href="https://www.linkedin.com/in/ilan-aliouchouche-752722277/"><img src="img/linkicon.png" alt="LinkedIn"> LinkedIn</a>
+    </div>
+    <div class="footer">
+        <p>Contact: ilanaitk@hotmail.com | ilan.aliouchouche@universite-paris-saclay.fr</p>
+    </div>
 </body>
 </html>

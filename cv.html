@@ -4,7 +4,7 @@
     <title>Curriculum Vitae</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -13,140 +13,170 @@
         }
 
         body {
-            font-family: 'Pacifico', cursive;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: url('img/yuriy-kovalev-nN1HSDtKdlw-unsplash.jpg') no-repeat center center fixed;
-            background-size: cover;
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: repeat(12, 1fr);
-            height: 100vh;
-            color: #fff;
-            padding-left: 20px;
+            background: #EDE7F6;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 1s ease-out forwards;
         }
 
-        h1, h2, p, ul {
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
 
         h1 {
-            grid-column: 1 / 13;
-            grid-row: 1 / 2;
-            text-align: center;
-            font-size: 4rem;
+            color: #5D1049;
+            font-size: 2.4rem;
+            margin-bottom: 40px;
         }
 
-        .personal-info {
-            grid-column: 1 / 6;
-            grid-row: 2 / 5;
+        .bubble-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            align-items: start;
+            margin-bottom: 40px;
         }
 
-        .education {
-            grid-column: 7 / 13;
-            grid-row: 2 / 5;
+        .bubble {
+            cursor: pointer;
+            background-color: #5D1049;
+            color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, transform 0.3s;
+            
         }
 
-        .work-experience {
-            grid-column: 1 / 6;
-            grid-row: 5 / 8;
+        .bubble:hover {
+            background-color: #4A148C;
+            transform: scale(1.05);
         }
 
-        .technical-skills {
-            grid-column: 7 / 13;
-            grid-row: 5 / 8;
+        .modal {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #333;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            max-width: 80%;
+            width: 80%;
         }
 
-        .interests {
-            grid-column: 1 / 6;
-            grid-row: 8 / 11;
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
         }
 
-        .personal-qualities {
-            grid-column: 7 / 13;
-            grid-row: 8 / 11;
+        .close-btn {
+            float: right;
+            cursor: pointer;
+            color: #333;
+            padding: 5px 10px;
         }
 
-        .languages {
-            grid-column: 1 / 6;
-            grid-row: 11 / 12;
-        }
-
-        .references {
-            grid-column: 7 / 13;
-            grid-row: 11 / 12;
+        .close-btn:hover {
+            color: #ff0000;
         }
     </style>
+    <script>
+        function showModal(id) {
+            document.getElementById(id).style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
 </head>
 <body>
     <h1>Curriculum Vitae</h1>
 
-    <div class="personal-info">
-        <h2>Personal Information:</h2>
-        <ul>
-            <li>Last Name: Aliouchouche</li>
-            <li>First Name: Ilan</li>
-            <li>Postal Code: 91600</li>
-            <li>E-mail: ilan.aliouchouche@u-psud.fr</li>
-        </ul>
+    <div class="bubble-wrapper">
+        <div class="bubble" onclick="showModal('personal-info')">Personal Information</div>
+        <div class="bubble" onclick="showModal('education')">Education</div>
+        <div class="bubble" onclick="showModal('work-experience')">Professional Experience</div>
+        <div class="bubble" onclick="showModal('technical-skills')">Technical Skills</div>
+        <div class="bubble" onclick="showModal('interests')">Interests</div>
+        <div class="bubble" onclick="showModal('personal-qualities')">Personal Qualities</div>
+        <div class="bubble" onclick="showModal('languages')">Languages</div>
+        <div class="bubble" onclick="showModal('references')">References</div>
     </div>
 
-    <div class="education">
-        <h2>Education:</h2>
+    <div class="modal" id="personal-info">
+        <span class="close-btn" onclick="closeModal('personal-info')">&times;</span>
+        <p>Last Name: Aliouchouche</p>
+        <p>First Name: Ilan</p>
+        <p>Postal Code: 91600</p>
+        <p>E-mail: ilan.aliouchouche@u-psud.fr</p>
+    </div>
+
+    <div class="modal" id="education">
+        <span class="close-btn" onclick="closeModal('education')">&times;</span>
         <p>Master Data Science - apprenticeship, Paris-Saclay 2023-2025</p>
         <p>Licence Informartique, Paris-Saclay 2020-2023</p>
         <p>L1 Maths-Physique-Informatique, Paris-Saclay 2019-2020</p>
-
-
     </div>
 
-    <div class="work-experience">
-        <h2>Professional Experience:</h2>
+    <div class="modal" id="work-experience">
+        <span class="close-btn" onclick="closeModal('work-experience')">&times;</span>
         <p>Production operator at XFAB, where I controlled dimensions and trained a new agent.</p>
         <p>Delivery for Uber Eat, Deliveroo</p>
     </div>
 
-    <div class="technical-skills">
-        <h2>Technical Skills:</h2>
-        <ul>
-            <li>(Java, JavaFX), (Python, Numpy, Scikit-learn, pandas, Tensorflow, Keras, Transformers, Gensim), OCaml, (PHP, HTML, CSS, JS), C, C++</li>
-            <li>Pack Office</li>
-            <li>PIX Certification</li>
-        </ul>
+    <div class="modal" id="technical-skills">
+        <span class="close-btn" onclick="closeModal('technical-skills')">&times;</span>
+        <p>(Java, JavaFX), (Python, Numpy, Scikit-learn, pandas, Tensorflow, Keras, Transformers, Gensim), OCaml, (PHP, HTML, CSS, JS), C, C++</p>
+        <p>Pack Office</p>
+        <p>PIX Certification</p>
     </div>
 
-    <div class="interests">
-        <h2>Interests:</h2>
-        <ul>
-            <li>Photography</li>
-            <li>In-game photos (video games)</li>
-            <li>Motorcycling</li>
-            <li>Astronomy</li>
-        </ul>
+    <div class="modal" id="interests">
+        <span class="close-btn" onclick="closeModal('interests')">&times;</span>
+        <p>Photography</p>
+        <p>In-game photos (video games)</p>
+        <p>Motorcycling</p>
+        <p>Astronomy</p>
     </div>
 
-    <div class="personal-qualities">
-        <h2>Personal Qualities:</h2>
-        <ul>
-            <li>Curious</li>
-            <li>Humble</li>
-            <li>Pleasant</li>
-        </ul>
+    <div class="modal" id="personal-qualities">
+        <span class="close-btn" onclick="closeModal('personal-qualities')">&times;</span>
+        <p>Curious</p>
+        <p>Humble</p>
+        <p>Pleasant</p>
     </div>
 
-    <div class="languages">
-        <h2>Languages:</h2>
-        <ul>
-            <li>French: native language</li>
-            <li>English: B2</li>
-        </ul>
+    <div class="modal" id="languages">
+        <span class="close-btn" onclick="closeModal('languages')">&times;</span>
+        <p>French: native language</p>
+        <p>English: B2</p>
     </div>
 
-    <div class="references">
-        <h2>References:</h2>
+    <div class="modal" id="references">
+        <span class="close-btn" onclick="closeModal('references')">&times;</span>
         <p>Available on request</p>
     </div>
+
+    <div class="overlay" id="overlay" onclick="closeModal('')"></div>
 </body>
 </html>
-
-       
